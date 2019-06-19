@@ -1,0 +1,7 @@
+remote_theme : y7kim/agency-jekyll-theme
+url: ""
+baseurl: "dev_portfolio"
+# Site settings
+title: Awesome Title
+email: your-email@domain.com
+description: ""
