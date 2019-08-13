@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SeunpilKim's Portfolio</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+    <style>
+
+
+        @media screen and (max-width: 990px) {
+            .modal-title{
+                font-size: 20px;
+            }
+            #modalnav li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+            #modalnav2 li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+            #modalnav3 li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+            #modalnav4 li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+            #modalnav5 li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+            #modalnav6 li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+            #modalnav7 li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+            #modalnav8 li {
+                padding-right:5px; font-size:13px; line-height:10px;
+            }
+
+            .modalimage {
+                transition: all .2s ease-in-out;
+                width:45%; height:300px; padding: 20px 20px; display:inline-block;
+            }
+
+            .modalimage:hover {
+                transform: scale(1.1);
+            }
+            .modal-content{
+                width:90%; height:600px;
+            }
+
+
+        }
+        @media screen and (min-width: 991px) {
+
+            #modalnav li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+            #modalnav2 li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+            #modalnav3 li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+            #modalnav4 li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+            #modalnav5 li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+            #modalnav6 li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+            #modalnav7 li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+            #modalnav8 li {
+                padding-right:15px; font-size:22px; line-height:10px;
+            }
+
+            .modalimage {
+                transition: all .2s ease-in-out;
+                width:30%; height:300px; padding: 20px 20px; display:inline-block;
+            }
+
+            .modalimage:hover {
+                transform: scale(1.1);
+            }
+            .modal-content{
+                width:1000px; height:600px;
+            }
+
+            .modal-dialog{
+                margin:0 13%;
+            }
+            #sideNav .navbar-brand .img-profile{max-width:220px;min-height:230px;}
+        }
+
+
+
+
+    </style>
+</head>
+
+<body id="page-top">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Seun Pil Kim</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-0 mb-2" src="img/profile4.jpg" alt="">
+        </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="index.html">Go To Main</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#purpose">Purpose</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#enviroment">Enviroments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#goals">Goals</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#visuals">Visual Things</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#result">Results</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="purpose">
+        <div class="my-auto">
+            <h2 class="mb-5">Purpose</h2>
+            <p class="lead mb-5" style="font-weight: bold; font-size: 25px;">
+                As my self Project, I tried to make a page
+                which could be thought as web pos, since I'd like to practice DB skills using MySQL.<br><br>
+                <b>Why Must Be Pos?</b><br>Since to make web pos system, I must to be familar with
+                MySQL queries and php coding, I'd like to focus on Back-End development.
+                <br><br>In Short time which only 2 weeks like real companies do, I tried to be perfect as possible as I can.</p>
+
+            <div class="resume-date text-md-left">
+                <span style="font-size:20px; line-height:50px;">Date: November 1st 2016 - November 15th 2016</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="m-0">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="enviroment">
+        <div class="my-auto">
+            <h2 class="mb-5">Environments</h2>
+
+            <p style="font-weight:bold; font-size:25px;">Programming Language: PHP, JavaScript, JQuery, MySQL</p>
+            <p style="font-weight:bold; font-size:25px;">Tool: PHPSTORM</p>
+
+
+
+        </div>
+
+    </section>
+    <hr class="m-0">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="goals">
+        <div class="my-auto">
+            <h2 class="mb-5">GOALS</h2>
+
+            <ul class="fa-ul mb-0">
+                <li style="font-weight: bold; font-size: 25px;">
+                    <i class="fa-li fa fa-check"></i>
+                    Be Familiar with PHP, JavaScript, JQuery, MySQL
+                </li>
+                <li style="font-weight: bold; font-size: 25px;">
+                    <i class="fa-li fa fa-check"></i>
+                    Practice Real 2-Week Project
+                </li>
+                <li style="font-weight: bold; font-size: 25px;">
+                    <i class="fa-li fa fa-check"></i>
+                    Using Templates as Chart, Bootstrap
+                </li>
+                <li style="font-weight: bold; font-size: 25px;">
+                    <i class="fa-li fa fa-check"></i>
+                    Bring Data from MySQL using AJAX
+                </li>
+
+                <li style="font-weight: bold; font-size: 25px;">
+                    <i class="fa-li fa fa-check"></i>
+                    <a href="http://skim21.dothome.co.kr/">My Practice List for this project</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="visuals">
+        <div class="my-auto">
+            <h2 class="mb-5">SCREENSHOTS & VIDEOS</h2>
+
+            <div class="modalimage" align="center" id="myBtn">
+                <img src="img/PhpProject/main.PNG" style="width:100%; height:100%; border-radius:10px;">Main Page</div>
+
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!--Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Main Page</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/PhpProject/main.PNG" style="width:100%; height:100%; border-radius:10px;">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="modalimage" align="center" id="myBtn1">
+                <img src="img/PhpProject/login.PNG" style="width:100%; height:100%; border-radius:10px;">Login Page</div>
+            <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+                    <!--Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Login Page</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/PhpProject/login.PNG" style="width:80%; height:450px; border-radius:10px;">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modalimage" align="center" id="myBtn2">
+                <img src="img/PhpProject/itempage.PNG" style="width:100%; height:100%; border-radius:10px;">Item list</div>
+            <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+                    <!--Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Item list</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/PhpProject/itempage.PNG" style="width:100%; height:100%; border-radius:10px;">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modalimage" align="center" id="myBtn3">
+                <img src="img/PhpProject/reportpage.PNG" style="width:100%; height:100%; border-radius:10px;">Report Page</div>
+            <div class="modal fade" id="myModal3" role="dialog">
+                <div class="modal-dialog">
+                    <!--Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Report Page</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/PhpProject/reportpage.PNG" style="width:100%; height:100%; border-radius:10px;">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modalimage" align="center" id="myBtn4">
+                <img src="img/PhpProject/salepage.PNG" style="width:100%; height:100%; border-radius:10px;">Sales Page</div>
+            <div class="modal fade" id="myModal4" role="dialog">
+                <div class="modal-dialog">
+                    <!--Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Report Page</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/PhpProject/salepage.PNG" style="width:100%; height:100%; border-radius:10px;">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modalimage" align="center" id="myBtn5">
+                <img src="img/PhpProject/updateitem.PNG" style="width:100%; height:100%; border-radius:10px;">Edit Modal</div>
+            <div class="modal fade" id="myModal5" role="dialog">
+                <div class="modal-dialog">
+                    <!--Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
+                            <h4 class="modal-title">Item Edit Modal</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/PhpProject/updateitem.PNG" style="width:80%; height:450px; border-radius:10px;">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="result">
+        <div class="my-auto">
+            <h2 class="mb-5">Results</h2>
+          
+            <br>
+            <p style="font-weight: bold; font-size: 20px;">What I am Done</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KrxuaBbqeqI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br><br>
+            <p class="lead mb-5" style="font-weight: bold; font-size: 20px;">
+                <b>What Was Difficult?</b><br>
+                Using SQL Queries to bring data to php page,which I've never thought about it before and using ajax to post data to php page.<br><br>
+
+                <b>What will be next?</b><br>I found Database is very fun to develop.
+                <br>I will dig about database queries and php. And I'd like to try to use Oracle Database, too.
+                </p>
+
+
+
+        </div>
+
+    </section>
+
+    <hr class="m-0">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/resume.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#myBtn").click(function () {
+            $("#myModal").modal();
+        });
+
+        $("#myBtn1").click(function () {
+            $("#myModal1").modal();
+        });
+
+        $("#myBtn2").click(function () {
+            $("#myModal2").modal();
+        });
+        $("#myBtn3").click(function () {
+            $("#myModal3").modal();
+        });
+        $("#myBtn4").click(function () {
+            $("#myModal4").modal();
+        });
+        $("#myBtn5").click(function () {
+            $("#myModal5").modal();
+        });
+        $("#myBtn6").click(function () {
+            $("#myModal6").modal();
+        });
+        $("#myBtn7").click(function () {
+            $("#myModal7").modal();
+        });
+    });
+
+</script>
+
+</body>
+
+</html>

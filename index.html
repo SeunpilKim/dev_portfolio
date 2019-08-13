@@ -12,7 +12,7 @@
 
   <!-- Font Awesome Icons -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
+  <script src="vendor/jquery/jquery.min.js"></script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -32,6 +32,261 @@
 	display:inline-block;
 }
 </style>
+<style>
+    .animation_canvas {
+        overflow: hidden;
+        position: relative;
+        width: 600px;
+        height: 400px;
+    }
+
+    /* Slider Panel */
+    .slider_panel {
+        width: 3000px;
+        position: relative;
+    }
+
+    .slider_image {
+        float: left;
+        width: 75%;
+        height: 400px;
+    }
+
+    /* Control Panel */
+    .control_panel {
+        position: absolute;
+        top: 380px;
+        left: 270px;
+        height: 13px;
+        overflow: hidden;
+    }
+
+    .control_button {
+        width: 12px;
+        height: 46px;
+        position: relative;
+        float: left;
+        cursor: pointer;
+        background: whitesmoke;
+    }
+
+    .control_button:hover {
+        top: -16px;
+    }
+
+    .control_button.active {
+        top: -31px;
+    }
+
+    @media screen and (max-width: 990px) {
+        .modal-title{
+            font-size: 20px;
+        }
+        #modalnav li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav1 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav2 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav3 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav4 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav5 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav6 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav7 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+        #modalnav8 li {
+            padding-right:5px; font-size:13px; line-height:10px;
+        }
+
+        .modalimage {
+            transition: all .2s ease-in-out;
+            width:45%; height:300px; padding: 20px 20px; display:inline-block;
+        }
+
+        .modalimage:hover {
+            transform: scale(1.1);
+        }
+        .modal-content{
+            width:90%; height:600px;
+        }
+        #ConCave_four img{
+            width:90%; height:350px;
+        }
+        #ConCave_five p{
+            font-size:10px;
+        }
+        #Enter_five p{
+            font-size:15px;
+        }
+        #CPU_four img{
+            width:90%; height:350px;
+        }
+        #Enter_four img{
+            width:90%; height:350px;
+        }
+        #Super_four iframe{
+            width:90%;
+            height:300px;
+        }
+        #Super_five iframe{
+            width:90%;
+            height:300px;
+        }
+
+    }
+    @media screen and (min-width: 991px) {
+
+        #modalnav li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav1 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav2 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav3 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav4 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav5 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav6 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav7 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+        #modalnav8 li {
+            padding-right:15px; font-size:22px; line-height:10px;
+        }
+
+        .modalimage {
+            transition: all .2s ease-in-out;
+            width:23%; height:300px; padding: 20px 20px; display:inline-block;
+        }
+
+        .modalimage:hover {
+            transform: scale(1.1);
+        }
+        .modal-content{
+            width:800px; height:600px;
+        }
+        #ConCave_four img{
+            width:600px; height:315px;
+        }
+        #CPU_four img{
+            width:600px; height:315px;
+        }
+        #Enter_four img{
+            width:600px; height:315px;
+        }
+        #Enter_five p{
+            font-weight:bold;
+            font-size:17px;
+        }
+        #Super_four iframe{
+            width:600px;
+            height:315px;
+        }
+        #Super_five iframe{
+            width:600px;
+            height:315px;
+        }
+        #sideNav .navbar-brand .img-profile{max-width:220px;min-height:230px;}
+    }
+
+
+
+
+</style>
+<script>
+    $(document).ready(function () {
+        $("#myBtn").click(function () {
+            window.location = "phpproject.html";
+        });
+
+        $("#myBtn1").click(function () {
+            $("#myModal1").modal();
+        });
+
+        $("#myBtn2").click(function () {
+            $("#myModal2").modal();
+        });
+        $("#myBtn3").click(function () {
+            $("#myModal3").modal();
+        });
+        $("#myBtn4").click(function () {
+            $("#myModal4").modal();
+        });
+        $("#myBtn5").click(function () {
+            $("#myModal5").modal();
+        });
+        $("#myBtn6").click(function () {
+            $("#myModal6").modal();
+        });
+        $("#myBtn7").click(function () {
+            $("#myModal7").modal();
+        });
+
+        //슬라이더를 움직여주는 함수
+        function moveSlider(index) {
+            //슬라이더를 이동합니다.
+            var willMoveLeft = -(index * 600);
+            $('.slider_panel').animate({left: willMoveLeft}, 'slow');
+
+            //control_button에 active 클래스를 부여/제거합니다.
+            $('.control_button[data-index=' + index + ']').addClass('active');
+            $('.control_button[data-index!=' + index + ']').removeClass('active');
+            $('.slider_image[data-index=' + index + ']').addClass('active');
+            $('.slider_image[data-index!=' + index + ']').removeClass('active');
+
+            //글자를 이동합니다.
+            $('.slider_text[data-index=' + index + ']').show().animate({
+                left: 0
+            }, 'slow');
+
+            $('.slider_text[data-index!=' + index + ']').hide('slow', function () {
+                $(this).css('left', -300);
+            });
+        }
+
+        //초기 텍스트 위치를 지정합니다.
+        $('.slider_text').css('left', -300).each(function (index) {
+            $(this).attr('data-index', index);
+        });
+        $('.slider_image').each(function (index) {
+            $(this).attr('data-index', index);
+        });
+
+        //컨트롤 버튼의 클릭 리스너 지정 및 data-index 할당
+        $('.control_button').each(function (index) {
+            $(this).attr('data-index', index);
+        }).click(function () {
+            var index = $(this).attr('data-index');
+            moveSlider(index);
+        });
+
+        //초기 슬라이더 위치 지정
+        var randomNumber = Math.round(Math.random() * 4);
+        moveSlider(randomNumber);
+    });
+</script>
 </head>
 
 <body id="page-top">
@@ -52,7 +307,19 @@
             <a class="nav-link js-scroll-trigger" href="#services">Skills</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Projects</a>
+            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Work Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#activities">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -102,22 +369,646 @@
     <div class="container">
 	<h2><i class="fa fa-tasks left"></i> SKILLS</h2>
 	<h3 class="skills">Front-End</h3>
-	<span class="keywords">Don't have</span>
+	<span class="keywords">Javascript</span>
+  <span class="keywords">HTML</span>
+  <span class="keywords">CSS</span>
+  <span class="keywords">React</span>
 	<h3 class="skills">Back-End</h3>
-	<span class="keywords">Python</span>
+	<span class="keywords">PHP</span>
 	<span class="keywords">MySQL</span>
-
+  <span class="keywords">MVC</span>
 	<h3 class="skills">주력 언어</h3>
 	<span class="keywords">JavaScript</span>
 	<span class="keywords">HTML</span>
 	<span class="keywords">CSS</span>
 	<span class="keywords">PHP</span>
-	<h3 class="skills">기타</h3>
-	<span class="keywords">C</span>
-	<span class="keywords">C++</span>
+	<h3 class="skills">Summary</h3>
+
+  <ul class="fa-ul mb-0">
+      <li style="font-weight: bold; font-size: 20px;">
+          <i class="fa-li fa fa-check"></i>
+          Proficient in HTML/CSS
+      </li>
+      <li style="font-weight: bold; font-size: 20px;">
+          <i class="fa-li fa fa-check"></i>
+          Familiarity working with Javascript, jQuery, PHP, MySQL
+      </li>
+      <li style="font-weight: bold; font-size: 20px;">
+          <i class="fa-li fa fa-check"></i>
+          Basic about Codeigniter, React
+      </li>
+      <li style="font-weight: bold; font-size: 20px;">
+          <i class="fa-li fa fa-check"></i>
+          Native in Korean and Business Level Proficiency in English
+      </li>
+  </ul>
+</div>
     </div>
   </section>
+  <section class="page-section" id="projects">
+      <div class="container">
+          <h2 class="mb-5"><i class="fa fa-folder left"></i> Projects <br>- Click Image for more info</h2>
 
+          <div class="modalimage" id="myBtn"
+               style="">
+              <img src="img/PhpProject/mainimg.jpg" style="width:100%; height:100%; border-radius:10px;"></div>
+          <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content" style="">
+                      <div class="modal-header">
+                          <h4 class="modal-title">WEB POS BY PHP & MYSQL</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav" class="nav nav-tabs" style="height:25px;">
+                              <li class="active">
+                                  <a data-toggle="tab" href="#PHP_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#PHP_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#PHP_three">Goals</a></li>
+                              <li ><a data-toggle="tab" href="#PHP_four">Screenshots</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#PHP_five">Video</a></li>
+                              <li ><a data-toggle="tab" href="#PHP_six">Results</a></li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="PHP_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">As my self Project, I tried to make a page
+                                  which could be thought as web pos, since I'd like to practice DB skills using MySQL.<br><br>
+                                      <b>Why Must Be Pos?</b><br>Since to make web pos system, I must to be familar with
+                                  MySQL queries and php coding, I'd like to focus on Back-End development.
+                                  <br><br>In Short time which only 2 weeks like real companies do, I tried to be perfect as possible as I can.</p>
+                                  <div class="resume-date text-md-left">
+                                      <span style="font-size:20px; line-height:50px;">Date: November 1st 2016 - November 15th 2016</span>
+                                  </div>
+                              </div>
+                              <div id="PHP_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:25px;">Programming Language: PHP, JavaScript, JQuery, MySQL</p>
+                                  <p style="font-weight:bold; font-size:25px;">Tool: PHPSTORM</p>
+                              </div>
+                              <div id="PHP_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:17px;">Be Familiar with PHP, JavaScript, JQuery, MySQL</li>
+                                      <li style="font-weight:bold; font-size:17px;">Practice Real 2-Week Project
+                                      </li>
+                                      <li style="font-weight:bold; font-size:17px;">Using Templates as Chart, Bootstrap</li>
+                                      <li style="font-weight:bold; font-size:17px;">Bring Data from MySQL using AJAX</li>
+                                      <li style="font-weight:bold; font-size:17px;"><a href="http://skim21.dothome.co.kr/">My Practice List</a></li>
+                                  </ul>
+
+                              </div>
+                              <div id="PHP_four" class="tab-pane fade">
+                                  <h3>Screenshot</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Flow chart of Program</p>
+                                  <img style="width:75%; height:350px; border-radius:10px;" src="img/LOL/LOL-4.PNG">
+                              </div>
+                              <div id="PHP_five" class="tab-pane fade">
+                                  <h3>Video</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Flow chart of Program</p>
+                                  <img style="width:75%; height:350px; border-radius:10px;" src="img/LOL/LOL-4.PNG">
+                              </div>
+                              <div id="PHP_six" class="tab-pane fade">
+                                  <h3>Result</h3>
+                                  <p style="font-weight:bold; font-size:17px;">As a project to familiarize myself with
+                                      data structures, what methods are
+                                      effective in inserting, deleting, searching, and sorting data</p>
+                                  <p style="font-weight:bold; font-size:17px;">Difficult Point:<br> Unfamiliar with
+                                      data structure/ Using pointer to search, delete,
+                                      insert, sort data
+                                  </p>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+
+          <div class="modalimage" id="myBtn1"
+               style="">
+              <img src="img/LOL/title.jpg" style="width:100%; height:100%; border-radius:10px;"></div>
+          <div class="modal fade" id="myModal1" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content" style="">
+                      <div class="modal-header">
+                          <h4 class="modal-title">League Of Legends(LOL) Champions’ Dictionary</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav1" class="nav nav-tabs" style="height:25px;">
+                              <li class="active">
+                                  <a data-toggle="tab" href="#LOL_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#LOL_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#LOL_three">Goals</a></li>
+                              <li ><a data-toggle="tab" href="#LOL_four">Screenshots</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#LOL_five">Results</a></li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="LOL_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">As a project that we learned during the
+                                      class time that we learned the linked
+                                      list and the tree structure, we implement the information of the LOL character
+                                      which is an interesting topic through a structured linked list and a tree
+                                      structure.</p>
+                                  <div class="resume-date text-md-left">
+                                      <span style="font-size:20px; line-height:50px;">Date: March 2016 - June 2016</span>
+                                  </div>
+                              </div>
+                              <div id="LOL_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:25px;">Programming Language: C</p>
+                                  <p style="font-weight:bold; font-size:25px;">Tool: Visual Studio</p>
+                              </div>
+                              <div id="LOL_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:17px;">Search in the linked list</li>
+                                      <li style="font-weight:bold; font-size:17px;">Insert new data in linked list
+                                      </li>
+                                      <li style="font-weight:bold; font-size:17px;">Delete data in linked list</li>
+                                      <li style="font-weight:bold; font-size:17px;">Print data in linked list</li>
+                                  </ul>
+                              </div>
+                              <div id="LOL_four" class="tab-pane fade">
+                                  <h3>Screenshot</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Flow chart of Program</p>
+                                  <img style="width:75%; height:315px; border-radius:10px;" src="img/LOL/LOL-4.PNG">
+                              </div>
+                              <div id="LOL_five" class="tab-pane fade">
+                                  <h3>Result</h3>
+                                  <p style="font-weight:bold; font-size:17px;">As a project to familiarize myself with
+                                      data structures, what methods are
+                                      effective in inserting, deleting, searching, and sorting data</p>
+                                  <p style="font-weight:bold; font-size:17px;">Difficult Point:<br> Unfamiliar with
+                                      data structure/ Using pointer to search, delete,
+                                      insert, sort data
+                                  </p>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <div class="modalimage" id="myBtn2">
+              <img src="img/Concave/title.jpg" style="width:100%; height:100%; border-radius:10px;"></div>
+
+          <div class="modal fade" id="myModal2" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title">Gomoku</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav2" class="nav nav-tabs" style="height:25px;">
+                              <li class="active" ><a data-toggle="tab" href="#ConCave_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#ConCave_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#ConCave_three">Goals</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#ConCave_four">Screenshots</a></li>
+                              <li ><a data-toggle="tab" href="#ConCave_five">Results</a>
+                              </li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="ConCave_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Develop AI Concave Player by C language, to be familiar with pointer or data
+                                      structure by making Concave AI.</p>
+                                  <div class="resume-date text-md-left">
+                                      <span  style="font-size:20px; line-height:50px;">Date: May 2016 - June 2016</span>
+                                  </div>
+                              </div>
+                              <div id="ConCave_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Programming Language: C</p>
+                                  <p style="font-weight:bold; font-size:20px;">Tool: Visual Studio</p>
+                              </div>
+                              <div id="ConCave_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:17px;">Developing Concave AI Player</li>
+                                      <li style="font-weight:bold; font-size:17px;">Efficiency-Based Efficient Artificial Intelligence</li>
+                                      <li style="font-weight:bold; font-size:17px;">Search for best strategy to win others in concave game</li>
+                                      <li style="font-weight:bold; font-size:17px;">Be familiar with linked list</li>
+                                  </ul>
+                              </div>
+                              <div id="ConCave_four" class="tab-pane fade">
+                                  <h3>Screenshots</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Win / Lose table of my AI Program</p>
+                                  <img src="img/Concave/Concave_1.PNG" >
+
+                              </div>
+                              <div id="ConCave_five" class="tab-pane fade">
+                                  <h3>Result</h3>
+
+                                  <p>Defense was used as a function that receives coordinates first, and when it
+                                      receives coordinates, it calculates its weight and adds it to the surroundings.
+                                      Since we have taken the coordinates and added the weights to the eight
+                                      directions basically, and the case of the backdrop was implemented with defense
+                                      as the main, in the case of the backdrop attack, only the attack that filled the
+                                      four when there were three was not implemented. When the attack function is
+                                      called by obtaining the weight, the implementation is performed so that the
+                                      defense is performed in the largest place among the weights.
+                                  </p>
+
+                                  <p>
+                                      In the case of the black stone, the attack follows the lens rule which makes 3,
+                                      4, 4, and the blade impossible, so we checked 3,3 by the number of cases and
+                                      also checked the blade. 4,4 did not do it separately because it does not come
+                                      out with probability. When they put a fight between artificial intelligence in a
+                                      group, it became a pit. Despite having checked 3,3, there was also a case where
+                                      he missed the game by defeating him occasionally.
+                                  </p>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <div class="modalimage" id="myBtn3">
+              <img src="img/CPU/Logisim.PNG" style="width:100%; height:100%; border-radius:10px;"></div>
+
+          <div class="modal fade" id="myModal3" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title">8bit CPU Logisim</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav3" class="nav nav-tabs" style="height:25px;">
+                              <li class="active" ><a data-toggle="tab" href="#CPU_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#CPU_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#CPU_three">Goals</a></li>
+                              <li ><a data-toggle="tab" href="#CPU_four">Screenshots</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#CPU_five">Results</a></li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="CPU_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Understanding about computer architecture by making 8bit CPU with Logisim,
+                                      Understanding about computer logical stream, since computer architecture is
+                                      based on what is CPU</p>
+                                  <div class="resume-date text-md-left">
+                                      <span  style="font-size:20px; line-height:50px;">Date: May 2016 - June 2016</span>
+                                  </div>
+                              </div>
+                              <div id="CPU_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Tool: Logisim</p>
+                              </div>
+                              <div id="CPU_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:17px;">Design 8bit CPU</li>
+                                      <li style="font-weight:bold; font-size:17px;">Understanding computer architecture</li>
+                                      <li style="font-weight:bold; font-size:17px;">Understanding logical stream of computer</li>
+                                  </ul>
+                              </div>
+                              <div id="CPU_four" class="tab-pane fade">
+                                  <h3>Screenshots</h3>
+                                  <p style="font-weight:bold; font-size:20px;">8bit CPU architecture </p>
+                                  <img src="img/CPU/Logisim.PNG" >
+
+                              </div>
+                              <div id="CPU_five" class="tab-pane fade">
+                                  <h3>Result</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Understood about CPU architecture, practiced to make a architecture of CPU.</p>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <div class="modalimage" id="myBtn4">
+              <img src="img/Enter/Enter-1.PNG" style="width:100%; height:100%; border-radius:10px;"></div>
+
+          <div class="modal fade" id="myModal4" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content" >
+                      <div class="modal-header">
+                          <h4 class="modal-title">EnterNoWhere</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav4" class="nav nav-tabs" style="height:25px;">
+                              <li class="active" ><a data-toggle="tab" href="#Enter_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#Enter_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#Enter_three">Goals</a></li>
+                              <li ><a data-toggle="tab" href="#Enter_four">Screenshots</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#Enter_five">Results</a></li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="Enter_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Making a 3D Game with OpenGL, Making a horror game with FMOD sound system and
+                                      lighting.</p>
+                                  <div class="resume-date text-md-left">
+                                      <span style="font-size:20px; line-height:50px;">Date: Sep. 2016 - Dec. 2016</span>
+                                  </div>
+                              </div>
+                              <div id="Enter_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Programming Language:OpenGL, C</p>
+                                  <p style="font-weight:bold; font-size:20px;">Tool: Visual Studio</p>
+                              </div>
+                              <div id="Enter_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:17px;">Be familiar with OpenGL</li>
+                                      <li style="font-weight:bold; font-size:17px;">FMOD sound system and lighting</li>
+                                  </ul>
+                              </div>
+                              <div id="Enter_four" class="tab-pane fade">
+                                  <h3>Screenshots</h3>
+                                  <p style="font-weight:bold; font-size:20px;">IN-GAME SCREESHOTS</p>
+                                  <img src="img/Enter/Enter-1.PNG" >
+
+                              </div>
+                              <div id="Enter_five" class="tab-pane fade">
+                                  <h3>Result</h3>
+                                  <p >Throughout the production process, I felt a bit different from when I was at the
+                                      time of the wins. I thought FMOD was difficult, but it was not so easy to
+                                      contact me, but I felt it was not too bad. I really felt how hard it was to code
+                                      it as planned, and I felt the process of knowing and reviewing open Gial again
+                                      again through this assignment.
+                                      I liked horror games and at the same time I hated horror games. However, I
+                                      thought that I wanted to create horror games with lots of games, and I wanted to
+                                      make them as assignments. I think that the game is really an object that has
+                                      tremendous depth than thought. It was a meaningful experience that graphics were
+                                      not enough and they were not enough, but it was such a small challenge. </p>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <div class="modalimage" id="myBtn5">
+              <img src="img/Super/title.PNG" style="width:100%; height:100%; border-radius:10px;"></div>
+
+          <div class="modal fade" id="myModal5" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title">SuperSneak</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav5" class="nav nav-tabs" style="height:25px;">
+                              <li class="active" ><a data-toggle="tab" href="#Super_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#Super_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#Super_three">Goals</a></li>
+                              <li ><a data-toggle="tab" href="#Super_four">Video</a></li>
+                              <li ><a data-toggle="tab" href="#Super_five">Result Video</a>
+                              </li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="Super_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Make a game which contents are steal banks, escape from police.</p>
+                                  <p style="font-weight:bold; font-size:17px;">Since I want a game which has simple keyboard setting and little thrilled
+                                      game.</p>
+                                  <div class="resume-date text-md-left">
+                                      <span style="font-size:20px; line-height:50px;">Date: Sep. 2016 - Dec. 2016</span>
+                                  </div>
+                              </div>
+                              <div id="Super_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Programming Language:Python</p>
+                                  <p style="font-weight:bold; font-size:20px;">Tool: Pycharm</p>
+                              </div>
+                              <div id="Super_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:17px;">Making a 2D game with Python</li>
+                                      <li style="font-weight:bold; font-size:17px;">Trying to make a A* algorithm</li>
+                                  </ul>
+                              </div>
+                              <div id="Super_four" class="tab-pane fade">
+                                  <h3>Video</h3>
+
+                                  <iframe src="https://www.youtube.com/embed/8nec5EJAlCM"
+                                          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                              </div>
+                              <div id="Super_five" class="tab-pane fade">
+                                  <h3>Result - Video</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Let my friend play my game.</p>
+                                  <iframe  src="https://www.youtube.com/embed/ikiVUmH78ko"
+                                           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <div class="modalimage" id="myBtn6">
+              <img src="img/Profile/title.PNG" style="width:100%; height:100%; border-radius:10px;"></div>
+
+          <div class="modal fade" id="myModal6" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content" >
+                      <div class="modal-header">
+                          <h4 class="modal-title">HTML Introduce Page</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav6" class="nav nav-tabs" style="height:25px;">
+                              <li class="active" ><a data-toggle="tab" href="#HTML_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#HTML_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#HTML_three">Goals</a></li>
+                              <li ><a data-toggle="tab" href="#HTML_four">Github</a></li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="HTML_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Making a introducing page with only HTML/CSS to be familiar with using them.</p>
+                                  <p style="font-weight:bold; font-size:17px;">Practice basic HTML/CSS</p>
+                                  <div class="resume-date text-md-left">
+                                      <span style="font-size:20px; line-height:50px;">Date: Nov. 2017 - Dec. 2017</span>
+                                  </div>
+                              </div>
+                              <div id="HTML_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Programming Language:HTML/CSS</p>
+                                  <p style="font-weight:bold; font-size:20px;">Tool: Eclipse, Notepad++</p>
+                              </div>
+                              <div id="HTML_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:17px;">Practice basic HTML/CSS</li>
+                                      <li style="font-weight:bold; font-size:17px;">Using Map API to introduce my city</li>
+                                      <li style="font-weight:bold; font-size:17px;">Using "iframe" to show video on HTML</li>
+                                      <li style="font-weight:bold; font-size:17px;">Introduce myself with English</li>
+                                  </ul>
+                              </div>
+                              <div id="HTML_four" class="tab-pane fade">
+                                  <h3>GitHub</h3>
+                                  <a href="https://github.com/SeunpilKim/Project3_SeunpilKim" style="font-weight:bold; font-size:17px;">Visit my Github Page</a><br>
+
+                                  <a href="https://seunpilkim.github.io/Project3_SeunpilKim/" style="font-weight:bold; font-size:17px;">Visit my Basic
+                                      Website</a>
+
+
+                              </div>
+
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+
+          <div class="modalimage" id="myBtn7">
+              <img src="img/Gradu/title.PNG" style="width:100%; height:100%; border-radius:10px;"></div>
+
+          <div class="modal fade" id="myModal7" role="dialog">
+              <div class="modal-dialog">
+                  <!--Modal content-->
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h4 class="modal-title">LegendOfDoodles</h4>
+                      </div>
+                      <div class="modal-body">
+                          <ul id="modalnav7" class="nav nav-tabs" style="height:25px;">
+                              <li class="active" ><a data-toggle="tab" href="#Gradu_one">Purpose</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#Gradu_two">Environment</a>
+                              </li>
+                              <li ><a data-toggle="tab" href="#Gradu_three">Goals</a></li>
+                              <li ><a data-toggle="tab" href="#Gradu_four">Github</a></li>
+                              <li ><a data-toggle="tab" href="#Gradu_five">Result-Github</a>
+                              </li>
+
+                          </ul>
+
+                          <div class="tab-content">
+                              <div id="Gradu_one" class="tab-pane active">
+                                  <h3>Purpose</h3>
+                                  <p style="font-weight:bold; font-size:17px;">Develop a Game with technology which have learned for 4 years in this school.</p>
+                                  <p style="font-weight:bold; font-size:17px;">Using DirectX, IOCP, Making a game with c++ Framework.</p>
+                                  <div class="resume-date text-md-left">
+                                      <span style="font-size:20px; line-height:50px;">Date: Nov. 2017 - Oct. 2018</span>
+                                  </div>
+                              </div>
+                              <div id="Gradu_two" class="tab-pane fade">
+                                  <h3>Environment</h3>
+                                  <p style="font-weight:bold; font-size:20px;">Programming Language:C++, IOCP </p>
+                                  <p style="font-weight:bold; font-size:20px;">Tool: Visual Studio</p>
+                              </div>
+                              <div id="Gradu_three" class="tab-pane fade">
+                                  <h3>Goals</h3>
+                                  <ul>
+                                      <li style="font-weight:bold; font-size:20px;">Be Familiar with Client - Server Architecture</li>
+                                      <li style="font-weight:bold; font-size:20px;">Using IOCP, Multi-Thread, Develop Multi-User Interactive Game</li>
+
+                                  </ul>
+                              </div>
+                              <div id="Gradu_four" class="tab-pane fade">
+                                  <h3>Github</h3>
+
+                                  <a href="https://github.com/LegendOfDoodles/LegendOfDoodles" style="font-weight:bold; font-size:17px;">Visit Project Page</a><br>
+
+                              </div>
+                              <div id="Gradu_five" class="tab-pane fade">
+                                  <h3>Result - Github</h3>
+                                  <a href="https://github.com/LegendOfDoodles/Documents" style="font-weight:bold; font-size:17px;">Visit Document Page</a><br>
+
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+      </div>
+  </section>
   <!-- Portfolio Section -->
   <section class="page-section" id="portfolio">
     <div class="container" id="work">
@@ -125,42 +1016,113 @@
 	<div class="job">
 		<h3>인턴, Advanced Computer Learning Company, USA, North Carolina</h3>
 		<h4>Feburary 2019 - Present</h4>
-		<p>Javascript, HTML, CSS, PHP를 활용한 웹기반 에디터 어플리케이션 제작</p>
+		<p>Javascript, HTML, CSS, PHP, MySQL을 활용한 웹기반 에디터 어플리케이션 제작(프로젝트 진행중)</p>
+    <p>Web Based E-Learning Single Page Application based on Javascript, HTML, CSS, PHP, MySQL</p>
 		  <ul>
-		    <li>2019.06 Motion GUI 개편</li>
+        <li>2019.07 라이브러리 DB와 연동해서 파일리스트 관리하는 기능 구현</li>
+		    <li>2019.06 Motion GUI 개편, 타임라인, 모션 사용자 친화적으로 개선</li>
 		    <li>2019.05 ToolBox 구조 변경, Preloader추가, Publish쪽 Caption(자막)기능 추가</li>
 		    <li>2019.04 이미지 편집툴 중 스탬프 구현 - Cropper Plugin, 자사 서버에서 AWS로 이전, IDE변경(sublime text3 -> AWS IDE)</li>
 		    <li>2019.03 라이브러리 구현 - RoxyFileman Plugin, Admin Page, 컨텐츠 DB(MySQL) 연동</li>
-		    <li>2019.02 입사</li>
+		    <li>2019.02 인턴 시작</li>
 		  </ul>
 	</div>
-	<div class="job">
-		<h3>해병대, Marine Corps</h3>
-		<h4>December 2013 - September 2015</h4>
-	</div>
+
     </div>
   </section>
-<section class="page-section" id="portfolio">
+<section class="page-section" id="education">
     	<div class="container" id="education">
 		<h2><i class="fa fa-graduation-cap left"></i> EDUCATION</h2>
 
-			<h3>학사, 게임공학과 - 한국산업기술대학교</h3>
+			<h3>학사, 게임공학과 - 한국산업기술대학교(KPU), 시흥, 대한민국</h3>
 			<h4>March 2013 - February 2019<br>
 			GPA: 3.78</h4>
+      <br>
+      <h3>IT, Illinois Institute of Technology, Chicago IL, USA</h3>
+			<h4>August 2017 - February 2018<br>
+			15 Credits</h4>
 	</div>
 </section>
 
-<section class="page-section" id="portfolio">
+<section class="page-section" id="activities">
+    	<div class="container" id="activities">
+		<h2><i class="fa fa-futbol" aria-hidden="true"></i> ACTIVITIES</h2>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+            <h3 class="mb-0">Member</h3>
+            <div class="subheading mb-3">Table Tennis Club in KPU</div>
+            <div class="resume-date">
+                <span class="text-primary">September 2013 - December 2013</span>
+            </div>
+            <ul>
+                <li style="font-weight: bold; font-size: 17px;">Tried new activities as a member, raised basic
+                    health
+                </li>
+                <li style="font-weight: bold; font-size: 17px;">Being familiar with other people who was first
+                    seeing
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+            <h3 class="mb-0">Sergeant, Calculated 4.2” mortar angles, ranges</h3>
+            <div class="subheading mb-3">Marine Corps, Pohang South Korea</div>
+            <div class="resume-date">
+                <span class="text-primary">December 2013 - September 2015</span>
+            </div>
+            <ul>
+                <li style="font-weight: bold; font-size: 17px;">Trained for leadership with other people, tried
+                    other activities like swimming, got a lifeguard license
+                </li>
+                <li style="font-weight: bold; font-size: 17px;">Learned how to be patience whatever it’s
+                    circumstance, trained to get along with team members, Learned how to challenge for difficult
+                    things
+                </li>
+                <li style="font-weight: bold; font-size: 17px;">Praised for fast learning, Selected as best 4.2”
+                    mortar calculator for competition. Got special rest by getting lifeguard license
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+            <h3 class="mb-0">Member, Proactive via volunteering</h3>
+            <div class="subheading mb-3">Pal-Gak-Hoe in KPU</div>
+            <div class="resume-date">
+                <span class="text-primary">March 2016 - Present</span>
+            </div>
+            <ul>
+                <li style="font-weight: bold; font-size: 17px;">Patrolled around school area during
+                    10:00pm~1:00am once a week, worked as volunteer at school festival, received leadership
+                    scholarships every semester
+                </li>
+                <li style="font-weight: bold; font-size: 17px;">Raised responsibility, learned service spirit by
+                    helping other people
+                </li>
+            </ul>
+        </div>
+
+    </div>
+	</div>
+</section>
+
+<section class="page-section" id="interests">
     <div class="container" id="interests">
 	<h2><i class="fa fa-star left"></i> INTERESTS</h2>
-		<h3 class="skills">기술</h3>
-		<span class="keywords">웹 크롤링</span>
-		<span class="keywords">빅 데이터</span>
-		<span class="keywords">파이썬 백엔드</span>
-		<span class="keywords">데이터베이스</span>
+		<h3 class="skills">Tech</h3>
+		<span class="keywords">React</span>
+		<span class="keywords">Redux, React Hook</span>
+		<span class="keywords">PHP, MySQL</span>
+		<span class="keywords">TypeScript</span>
 
 
-		<h3 class="skills">개발</h3>
+		<h3 class="skills">Github</h3>
 		<span class="keywords">https://github.com/SeunpilKim</span>
      </div>
 </section>
@@ -178,7 +1140,7 @@
       <div class="row">
         <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
           <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>010 3477 0547</div>
+          <div>010 3477 0547(E-mail please)</div>
         </div>
         <div class="col-lg-4 mr-auto text-center">
           <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
